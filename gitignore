@@ -1,0 +1,17 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Env / secrets (none used by this project, but ignored as a safety net)
+.env
+.env.*
+!.env.example
+
+# In case a build step is added later
+node_modules/
+dist/
+build/
+.vercel/
