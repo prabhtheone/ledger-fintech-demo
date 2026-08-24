@@ -66,8 +66,8 @@ git push origin feature/amazing-new-dashboard
 1. Navigate back to the original `prabhtheone/ledger-fintech-demo` repository.
 2. Click the **"Compare & pull request"** banner.
 3. Describe what your PR changes and link any related issues.
-4. Submit the Pull Request!
-
+4. Submit the Pull Request!                                                                                                                                        
+5. wait for approval..
 ---
 
 ## 🛠️ Project File Structure Guidelines
