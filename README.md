@@ -67,17 +67,14 @@ npx esbuild ledger-app.jsx --format=esm --jsx=transform \
   --outfile=ledger-app.js
 ```
 
-## ⚠️ What's real vs. simulated
+## ⚠️ What's Real vs. Simulated
 
-Every interaction is genuinely functional — balances actually change, budgets actually track spend, the fraud check actually evaluates each transfer.
-
-What's **not** real: this isn't connected to any bank, UPI rail, or KYC/AML provider. Money movement, OTP, and identity verification are simulated for demo purposes. There is no backend, no database, and no API key anywhere in this project — nothing sensitive to configure, and nothing to leak.
-
-## 🔭 Possible next steps
-
-- Swap `localStorage` for a real backend (e.g. Supabase or Postgres + a small API) with row-level security, so each signed-in user gets a private, truly persistent account
-- Real authentication (magic link / OAuth) in place of the simulated onboarding
-- A real payments/KYC provider integration for a production version
+| Feature Area | What's Real (Functional) | What's Simulated (Demo Only) |
+| :--- | :--- | :--- |
+| **State & Balances** | Live balance updates & real-time budget tracking | Stored locally via `localStorage` (no database) |
+| **Logic & Rules** | Active fraud evaluation engine per transfer | Simulated money movement & dummy OTP verification |
+| **Identity & Compliance** | Full onboarding UX flow | Mock KYC/AML verification without external APIs |
+> **Security Note:** This project has no backend, database, or API keys. There are no sensitive credentials required to run or configure it.
 
 ## Reset demo data
 
