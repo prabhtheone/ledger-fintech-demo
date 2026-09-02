@@ -11,25 +11,51 @@ Any contributions you make to this FinTech demo are **greatly appreciated**.
 ## 📜 Code of Conduct
 By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md). Please report any inappropriate behavior to the project maintainers.
 
-## 🐛 Reporting Bugs
-If you find a bug in the wallet, payment flow, budgets, or dashboards, please open an **Issue** on GitHub and include:
-* A clear and descriptive title.
-* Steps to reproduce the bug.
-* Expected behavior vs. actual behavior.
-* Screenshots of the UI anomaly if applicable.
+Reporting Bugs
 
-## 💡 Suggesting Enhancements
-If you want to add new FinTech features (like new chart widgets, fraud check simulations, or currency toggles):
-1. Check the existing issues to make sure it hasn't been suggested yet.
-2. Open a new **Issue** describing your feature concept.
-3. Explain how it improves the interactive web demo experience.
+Found a bug in the wallet, payment flows, budgets, or dashboards? Open an Issue on GitHub with:
 
-## 🚀 The Contribution Process
+Title: Concise and descriptive summary.
 
-To contribute code updates, please follow this standard open-source workflow:
+Reproduction Steps: Step-by-step actions to trigger the bug.
 
-### 1. Fork the Repository
-Click the **Fork** button at the top-right corner of this repository page (`prabhtheone/ledger-fintech-demo`) to create a copy under your account.
+Behavior: What happened versus what you expected to happen.
+
+Visuals: Screenshots or screen recordings showing the issue.
+
+Suggesting Enhancements
+
+Have an idea for a new FinTech feature like chart widgets, fraud simulations, or currency toggles?
+
+Search: Check existing issues to prevent duplicates.
+
+Submit: Open a new Issue detailing your feature concept.
+
+Value: Briefly describe how it improves the demo experience.
+
+The Contribution Process
+
+Follow this standard workflow to submit code updates:
+
+1. Fork the Repository
+Click Fork at the top-right of prabhtheone/ledger-fintech-demo to duplicate the project to your GitHub account.
+
+2. Clone Your Fork
+
+Bash
+git clone https://github.com/YOUR-USERNAME/ledger-fintech-demo.git
+cd ledger-fintech-demo
+3. Create a Feature Branch
+
+Bash
+git checkout -b feature/your-feature-name
+# or for a bug fix:
+git checkout -b fix/your-fix-name
+4. Make Changes & Test
+
+Built with React + Tailwind CSS (zero-backend architecture).
+
+Make updates inside index.html, main.js, ledger-app.js, or ledger-app.jsx.
 
 ### 2. Clone Your Fork
 Clone your forked repository to your local machine:
