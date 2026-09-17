@@ -4,16 +4,18 @@ A fully interactive FinTech web app prototype built with React: onboarding & KYC
 
 ## ✨ Features
 
-- **Onboarding & KYC** — sign-up flow with OTP-style verification and a simulated ID check
-- **Wallet** — add money, see real-time balance, linked mock bank account
-- **Payments** — P2P transfers, bill payments, manual expense logging
-- **AI fraud check** — flags unusually large transfers and routes them through a confirmation step
-- **Insights** — spend-by-category chart, weekly trend chart, a computed financial health score
-- **Budgets & goals** — monthly category budgets with progress bars, savings goals you can contribute to
-- **Notifications** — in-app alerts for transactions, budget thresholds, and goal milestones
-- **Merchant view** — collect payments, issue refunds, track sales
-- **Admin view** — suspend/reinstate the account, review AI-flagged transactions, audit trail
-- **Persistence** — everything is saved to `localStorage`, so your data survives a refresh
+## ✨ Key Features
+
+* **🔐 Onboarding & KYC** — Interactive sign-up flow featuring OTP-style verification and simulated ID checks.
+* **💳 Digital Wallet** — Real-time balance updates, mock bank account linking, and instant fund top-ups.
+* **💸 Payments & Transfers** — Seamless P2P transfers, utility bill payments, and manual expense logging.
+* **🛡️ AI Fraud Guard** — Automated risk engine that flags high-value transfers for step-up confirmation.
+* **📊 Visual Insights** — Spend-by-category breakdowns, weekly trend charts, and a dynamic financial health score.
+* **🎯 Budgets & Goals** — Category spending caps with visual progress bars and dedicated savings target buckets.
+* **🔔 Smart Notifications** — In-app alert system for transaction events, budget thresholds, and goal milestones.
+* **🏪 Merchant Suite** — Business portal to collect payments, process refunds, and monitor sales metrics.
+* **🛠️ Admin Portal** — Governance suite to suspend/reinstate accounts, review flagged transactions, and inspect audit logs.
+* **💾 Local Persistence** — Zero-backend state management using `localStorage` to retain data across sessions.
 
 ## 🚀 Live demo
 
