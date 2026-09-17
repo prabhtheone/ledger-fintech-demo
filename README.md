@@ -1,67 +1,128 @@
 # Ledger — FinTech Platform Demo
 
-A fully interactive FinTech web app prototype built with React: onboarding & KYC, a digital wallet, P2P transfers, bill pay, expense tracking, budgets, savings goals, an AI-style fraud check, and separate Merchant and Admin dashboards — all running entirely in the browser with zero backend and zero build step.
+> A polished, browser-only FinTech dashboard demo for exploring digital wallets, payments, budgeting, fraud detection, merchant operations, and admin workflows.
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-0f172a?style=for-the-badge)](https://prabhtheone.github.io/ledger-fintech-demo/)
+[![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](./LICENSE)
+[![No Backend](https://img.shields.io/badge/Backend-None-38bdf8?style=for-the-badge)](#architecture)
+[![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=white)](#tech-stack)
+
+## Why Ledger?
+
+Ledger is a **FinTech UI/logic showcase** designed to demonstrate how a modern financial product can handle customer, merchant, and administrative workflows in one cohesive interface. It is intentionally backend-free, so anyone can clone it and explore the complete experience without configuring a database, API keys, or environment variables.
+
+**Use it to:**
+- explore a realistic wallet and payments UX
+- study client-side transaction and budgeting logic
+- demonstrate fraud/risk decision flows
+- showcase React UI work in a portfolio
+- prototype FinTech product ideas quickly
 
 ## ✨ Features
 
-## ✨ Key Features
+### Customer experience
+- 🔐 **Onboarding & KYC** — OTP-style verification and simulated identity checks
+- 💳 **Digital wallet** — balance management, mock bank linking, and top-ups
+- 💸 **Payments & transfers** — P2P transfers, bill payments, and expense logging
+- 🛡️ **Fraud Guard** — rule-based risk evaluation with step-up confirmation
+- 📊 **Financial insights** — category breakdowns, trends, and financial health scoring
+- 🎯 **Budgets & savings goals** — spending caps and progress tracking
+- 🔔 **Smart notifications** — transaction, budget, and milestone alerts
+- 💾 **Local persistence** — demo state survives browser refreshes via `localStorage`
 
-* **🔐 Onboarding & KYC** — Interactive sign-up flow featuring OTP-style verification and simulated ID checks.
-* **💳 Digital Wallet** — Real-time balance updates, mock bank account linking, and instant fund top-ups.
-* **💸 Payments & Transfers** — Seamless P2P transfers, utility bill payments, and manual expense logging.
-* **🛡️ AI Fraud Guard** — Automated risk engine that flags high-value transfers for step-up confirmation.
-* **📊 Visual Insights** — Spend-by-category breakdowns, weekly trend charts, and a dynamic financial health score.
-* **🎯 Budgets & Goals** — Category spending caps with visual progress bars and dedicated savings target buckets.
-* **🔔 Smart Notifications** — In-app alert system for transaction events, budget thresholds, and goal milestones.
-* **🏪 Merchant Suite** — Business portal to collect payments, process refunds, and monitor sales metrics.
-* **🛠️ Admin Portal** — Governance suite to suspend/reinstate accounts, review flagged transactions, and inspect audit logs.
-* **💾 Local Persistence** — Zero-backend state management using `localStorage` to retain data across sessions.
+### Operations
+- 🏪 **Merchant dashboard** — sales monitoring, payment collection, and refunds
+- 🛠️ **Admin dashboard** — account controls, flagged transaction review, and audit logs
 
 ## 🚀 Live demo
 
-Enable **GitHub Pages** for this repo (Settings → Pages → Source: `main` branch, `/ (root)`) and your live link will be:
+**[Open Ledger →](https://prabhtheone.github.io/ledger-fintech-demo/)**
 
-```
-https://<your-username>.github.io/<repo-name>/
-```
+The demo runs entirely in the browser. No account, API key, or backend is required.
 
-## 🖥️ Run it locally
+## 🖥️ Run locally
 
-This is a zero-build static site — no `npm install` required. The only catch: it uses ES module `<script type="module">` imports, which most browsers **block when opened directly as a `file://` URL**. So don't just double-click `index.html` — serve it instead:
+Ledger is a zero-build static site. You only need a local HTTP server because browsers restrict ES module imports when `index.html` is opened directly with `file://`.
 
 ```bash
-# Option 1 — Node (no install needed)
+git clone https://github.com/prabhtheone/ledger-fintech-demo.git
+cd ledger-fintech-demo
 npx serve .
-
-# Option 2 — Python
-python3 -m http.server 8000
-
-# Option 3 — VS Code
-# Right-click index.html → "Open with Live Server"
 ```
 
-Then open the printed `localhost` URL in your browser.
+Or use Python:
 
-## 🧱 Tech stack
+```bash
+python3 -m http.server 8000
+```
 
-- **React 18** — via [esm.sh](https://esm.sh) CDN + an import map (no bundler)
-- **Tailwind CSS** — Play CDN build, compiled in-browser
-- **lucide-react** — icons
-- **recharts** — the Insights charts
-- **localStorage** — client-side persistence (per-browser, not shared between devices)
+Then open the localhost URL printed by the server.
+
+## 🧱 Architecture
+
+```text
+index.html
+   │
+   ├── React / ReactDOM / Recharts / Lucide via ESM CDN
+   │
+   ▼
+main.js
+   │
+   ▼
+ledger-app.js  ← browser-ready runtime
+   ▲
+   │
+ledger-app.jsx ← editable React source
+   │
+   ▼
+localStorage ← demo-only persistence
+```
+
+There is **no server, database, authentication provider, payment gateway, or external financial API**. This makes the project easy to run and safe to use as a UI/logic demonstration, but it is not a production banking application.
+
+## 🧪 What's functional vs simulated?
+
+| Area | Demo behavior |
+|---|---|
+| UI & navigation | Functional | 
+| Wallet balances | Functional client-side state | 
+| Transactions | Functional client-side state | 
+| Budgets & goals | Functional client-side calculations | 
+| Fraud Guard | Functional rule-based demo engine | 
+| Persistence | Browser `localStorage` | 
+| OTP verification | Simulated | 
+| KYC / AML | Simulated | 
+| Bank connection | Simulated | 
+| Money movement | Simulated — no real funds | 
+| Authentication | Not implemented | 
+| Backend/API | Not implemented | 
+
+> **Security:** This repository does not require secrets or API keys. Never enter real financial credentials or personal banking information into the demo.
+
+## 🛠️ Tech stack
+
+- **React 18** — component-based UI
+- **Tailwind CSS** — utility-first styling via CDN
+- **Lucide React** — interface icons
+- **Recharts** — financial charts
+- **ES modules + esm.sh** — dependency loading without a bundler
+- **localStorage** — client-side demo persistence
 
 ## 📁 Project structure
 
 | File | Purpose |
 |---|---|
-| `index.html` | Entry HTML — Tailwind CDN, Google Fonts, and the import map for React / lucide-react / recharts |
-| `main.js` | Mounts the app into `#root`, with a friendly fallback if a CDN module fails to load |
-| `ledger-app.jsx` | App source (JSX) — edit this |
-| `ledger-app.js` | Pre-transpiled, browser-ready build of `ledger-app.jsx` — what actually ships |
+| `index.html` | HTML shell, metadata, CDN/import-map configuration |
+| `main.js` | Lightweight app bootstrap and error fallback |
+| `ledger-app.jsx` | Editable React source |
+| `ledger-app.js` | Browser-ready JavaScript shipped by the demo |
 | `LICENSE` | MIT license |
-| `.gitignore` | Standard ignores |
+| `CONTRIBUTING.md` | Contribution guidelines |
+| `CODE_OF_CONDUCT.md` | Community standards |
 
-If you edit `ledger-app.jsx`, re-transpile it before your changes show up in the browser:
+### Updating the browser build
+
+If you edit `ledger-app.jsx`, regenerate `ledger-app.js` with:
 
 ```bash
 npx esbuild ledger-app.jsx --format=esm --jsx=transform \
@@ -69,18 +130,26 @@ npx esbuild ledger-app.jsx --format=esm --jsx=transform \
   --outfile=ledger-app.js
 ```
 
-## ⚠️ What's Real vs. Simulated
+## ♻️ Reset demo data
 
-| Feature Area | What's Real (Functional) | What's Simulated (Demo Only) |
-| :--- | :--- | :--- |
-| **State & Balances** | Live balance updates & real-time budget tracking | Stored locally via `localStorage` (no database) |
-| **Logic & Rules** | Active fraud evaluation engine per transfer | Simulated money movement & dummy OTP verification |
-| **Identity & Compliance** | Full onboarding UX flow | Mock KYC/AML verification without external APIs |
-> **Security Note:** This project has no backend, database, or API keys. There are no sensitive credentials required to run or configure it.
+Open **Settings → Danger zone → Reset demo data** to clear the browser's stored demo state and restart the onboarding flow.
 
-## Reset demo data
+## 🤝 Contributing
 
-Settings → Danger zone → **"Reset demo data"** clears local storage and restarts onboarding.
+Ideas, bug reports, UI improvements, accessibility fixes, and documentation improvements are welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.
+
+## 📌 Roadmap
+
+- [ ] Add automated browser tests
+- [ ] Improve accessibility and keyboard navigation
+- [ ] Add a production-style build option
+- [ ] Add richer transaction filtering and export
+- [ ] Add optional mock API mode for full-stack demos
+- [ ] Add screenshots and a short product walkthrough
+
+## ⭐ Support the project
+
+If Ledger is useful for learning, prototyping, or your portfolio, consider **starring the repository**. Stars help other developers discover the project.
 
 ## License
 
